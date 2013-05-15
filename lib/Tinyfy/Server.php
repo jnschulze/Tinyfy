@@ -29,7 +29,7 @@ class Server
         }
         else
         {
-            $compress = $forceUncompressed ? false : $this->_clientSupportsCompression();
+            $compress = $forceUncompressed ? false : HTTPUtil::clientSupportsCompression();
             
             if(($data = $bundle->load($compress)) !== false)
             {
