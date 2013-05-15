@@ -77,7 +77,7 @@ class ClosureCompressor extends \Tinyfy\Compressor\AbstractCompressor
     {
         try
         {
-            return $this->_invoke($bundle->getFiles(), $noThrow);
+            return $this->_invoke($bundle->getFiles());
         }
         catch(Exception $e)
         {
