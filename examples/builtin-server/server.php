@@ -31,7 +31,7 @@ $type = isset($_GET['t']) ? $_GET['t'] : 'css';
 // force uncompressed serving?
 $forceUncompressed = isset($_GET['u']) && $_GET['u'] == 'true';
 
-// create a bundle instance using the our bundle id
+// create a bundle instance using our bundle id
 $bundle = \Tinyfy\Bundle::fromId($id, $type);
 
 // create a server instance
