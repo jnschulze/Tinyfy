@@ -23,6 +23,7 @@ $id = substr($id, 0, 32);
 if(strlen($id) < 32)
 {
     \Tinyfy\Util\HTTP::setResponseCode(404);
+    exit;
 }
 
 // get the type (css/js)
