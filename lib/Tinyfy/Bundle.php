@@ -217,16 +217,7 @@ class Bundle
         
         if(!isset($config['backend'][$this->_type]))
         {
-            if($this->_type == 'js')
-            {
-                require_once dirname(__FILE__).'/Compressor/JS/ClosureCompressor.php';
-                $compressor = new \Tinyfy\Compressor\JS\ClosureCompressor(array());
-            }
-            else
-            {
-                require_once dirname(__FILE__).'/Compressor/CSS/DefaultCompressor.php';
-                $compressor = new \Tinyfy\Compressor\CSS\DefaultCompressor();
-            }
+            $compressor = ($this->_type == 'js') ?  new \Tinyfy\Compressor\JS\ClosureCompressor(array()) : new \Tinyfy\Compressor\CSS\DefaultCompressor();
         }
         else if(is_object($config['backend'][$this->_type]) && $config['backend'][$this->_type] instanceof Compressor\AbstractCompressor)
         {
